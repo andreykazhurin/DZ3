@@ -1,0 +1,19 @@
+01-10 15:49:28 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "USER_NAME" не найден
+Column "USER_NAME" not found; SQL statement:
+select * from users where user_name [42122-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.command.dml.Select.prepare(Select.java:880)
+	at org.h2.command.Parser.prepareCommand(Parser.java:247)
+	at org.h2.engine.Session.prepareLocal(Session.java:461)
+	at org.h2.engine.Session.prepareCommand(Session.java:403)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1189)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:170)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at dbService.executor.Executor.execQuery(Executor.java:26)
+	at dbService.dao.UsersDAO.getAllUsers(UsersDAO.java:37)
+	at accounts.AccountService.<init>(AccountService.java:18)
+	at main.Main.main(Main.java:25)
